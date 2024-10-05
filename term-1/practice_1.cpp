@@ -147,4 +147,6 @@ int main()
 		default:
 			cout << "Invalid task";
 	}
+
+	return 0;
 }
