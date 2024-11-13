@@ -179,6 +179,7 @@ bool ValidationOfRomanNumerals(string str)
         return false;
     }
 }
+
 int value(char r)
 {
     if (r == 'I')
