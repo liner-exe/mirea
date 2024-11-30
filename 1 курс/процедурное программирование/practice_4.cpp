@@ -9,25 +9,23 @@
 
 #define PI 3.14
 
-using namespace std;
-
 void task1()
 {
-    double input;
-    cout << "Enter 10 numbers to find sum: " << endl;
+    std::cout << "Enter 10 numbers to find sum: " << std::endl;
 
-    ofstream fout("task1.txt");
+    std::ofstream fout("task1.txt");
     if (fout.is_open())
     {
+        double input;
         for (int i = 0; i < 10; i++)
         {
-            cin >> input;
-            fout << input << endl;
+            std::cin >> input;
+            fout << input << std::endl;
         }
         fout.close();
     }
 
-    ifstream fin("task1.txt");
+    std::ifstream fin("task1.txt");
     double number;
     double summ = 0.0f;
     if (fin.is_open())
@@ -37,63 +35,63 @@ void task1()
             summ += number;
         }
     }
-    cout << "Result: " << summ;
+    std::cout << "Result: " << summ;
 }
 
 void task2()
 {
     double x;
-    cout << "Enter x: ";
-    cin >> x;
+    std::cout << "Enter x: ";
+    std::cin >> x;
 
     if (x > 0) x = 1;
     else if (x == 0) x = 0;
     else if (x < 0) x = -1;
 
-    cout << x;
+    std::cout << x;
 }
 
 void rectangle()
 {
     double a, b;
-    cout << "Enter sides (a, b): ";
-    cin >> a >> b;
-    if (a <= 0 || b <= 0) { cout << "Rectangle does not exist"; return; }
-    cout << a * b;
+    std::cout << "Enter sides (a, b): ";
+    std::cin >> a >> b;
+    if (a <= 0 || b <= 0) { std::cout << "Rectangle does not exist"; return; }
+    std::cout << a * b;
 }
 
 void triangle()
 {
     double a, b, c;
-    cout << "Enter (a, b, c): ";
-    cin >> a >> b >> c;
+    std::cout << "Enter (a, b, c): ";
+    std::cin >> a >> b >> c;
 
     if (((a + b <= c) || (a + c <= b) || (b + c <= a)))
     {
-        cout << "Triangle does not exist";
+        std::cout << "Triangle does not exist";
     }
     else
     {
         double p = (a + b + c) / 2;
-        cout << sqrt(p * (p - a) * (p - b) * (p - c));
+        std::cout << sqrt(p * (p - a) * (p - b) * (p - c));
     }
 }
 
 void circle()
 {
-    cout << "Enter radius: ";
+    std::cout << "Enter radius: ";
     double R;
-    cin >> R;
-    if (R <= 0) { cout << "Circle does not exist"; return; }
+    std::cin >> R;
+    if (R <= 0) { std::cout << "Circle does not exist"; return; }
 
-    cout << PI * pow(R, 2);
+    std::cout << PI * pow(R, 2);
 }
 
 void task3()
 {
-    cout << "Enter the number of the shape: 1 - rectangle, 2 - triangle, 3 - circle: ";
+    std::cout << "Enter the number of the shape: 1 - rectangle, 2 - triangle, 3 - circle: ";
     short shape;
-    cin >> shape;
+    std::cin >> shape;
     switch (shape)
     {
     case 1:
@@ -106,7 +104,7 @@ void task3()
         circle();
         break;
     default:
-        cout << "Invalid shape";
+        std::cout << "Invalid shape";
         break;
     }
 }
@@ -119,18 +117,18 @@ void task4()
         {
             for (int j = 0; j < 30; j++)
             {
-                if (j < 8) cout << "* ";
-                else cout << '_';
+                if (j < 8) std::cout << "* ";
+                else std::cout << '_';
             }
-            cout << '\n';
+            std::cout << '\n';
         }
         else
         {
             for (int k = 0; k < 38; k++)
             {
-                cout << '_';
+                std::cout << '_';
             }
-            cout << '\n';
+            std::cout << '\n';
         }
     }
 }
@@ -161,10 +159,10 @@ void task5()
     while (true) { Sleep(0); }
 }
 
-bool ValidationOfRomanNumerals(string str)
+bool ValidationOfRomanNumerals(std::string str)
 {
 
-    const regex pattern("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
+    const std::regex pattern("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
 
 
     if (str.empty()) {
@@ -200,7 +198,7 @@ int value(char r)
     return -1;
 }
 
-int romanToDecimal(string& str)
+int romanToDecimal(std::string& str)
 {
     int res = 0;
 
@@ -237,38 +235,38 @@ int romanToDecimal(string& str)
 
 void task6()
 {
-    cout << "Enter roman number: ";
-    string str;
-    cin >> str;
+    std::cout << "Enter roman number: ";
+    std::string str;
+    std::cin >> str;
     if (ValidationOfRomanNumerals(str)) {
-        cout << "Result: " << romanToDecimal(str) << endl;
+        std::cout << "Result: " << romanToDecimal(str) << std::endl;
     }
     else {
-        cout << "Wrong data entered.";
+        std::cout << "Wrong data entered.";
     }
 }
 
 void random_num(int m, int i, int c) {
     int si = 0;
     int quantity;
-    cin >> quantity;
+    std::cin >> quantity;
     if (quantity < 0) {
-        cout << "Wrong data entered";
+        std::cout << "Wrong data entered";
         exit(0);
     }
     for (int b = 0; b < quantity; b++) {
         si = (m * si + i) % c;
-        cout << si << endl;
+        std::cout << si << std::endl;
     }
 }
 
 void task7()
 {
-    cout << "Enter random mode (1 or 2): ";
+    std::cout << "Enter random mode (1 or 2): ";
     int mode;
-    cin >> mode;
+    std::cin >> mode;
     if (mode != 1 and mode != 2) {
-        cout << "Wrong data entered";
+        std::cout << "Wrong data entered";
         exit(0);
     }
     if (mode == 1) {
@@ -283,26 +281,26 @@ void task8()
 {
     double A[3][4]{}, B[4][2]{}, C[3][2]{};
 
-    cout << "Enter matrix A:" << endl;
+    std::cout << "Enter matrix A:" << std::endl;
     for (int i = 0; i < 3; i++)
     {
-        cin >> A[i][0] >> A[i][1] >> A[i][2] >> A[i][3];
+        std::cin >> A[i][0] >> A[i][1] >> A[i][2] >> A[i][3];
 
         if (A[i][0] < 0 or A[i][1] < 0 or A[i][2] < 0 or A[i][3] < 0)
         {
-            cout << "Values must be positive.";
+            std::cout << "Values must be positive.";
             return;
         }
     }
 
-    cout << "Enter matrix B:" << endl;
+    std::cout << "Enter matrix B:" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        cin >> B[i][0] >> B[i][1];
+        std::cin >> B[i][0] >> B[i][1];
 
         if (B[i][0] < 0 or B[i][1] < 0)
         {
-            cout << "Values must be positive.";
+            std::cout << "Values must be positive.";
             return;
         }
     }
@@ -318,38 +316,38 @@ void task8()
         }
     }
 
-    cout << "Matrix C: " << endl;
+    std::cout << "Matrix C: " << std::endl;
     for (int i = 0; i < 3; i++)
     {
-        cout << C[i][0] << " " << C[i][1] << endl;
+        std::cout << C[i][0] << " " << C[i][1] << std::endl;
     }
 
-    double biggestIncome = max(max(C[0][0], C[1][0]), C[2][0]);
-    double lowestIncome = min(max(C[0][0], C[1][0]), C[2][0]);
-
-    for (int i = 0; i < 3; i++)
-    {
-        if (C[i][0] == biggestIncome) cout << "The merchant with the biggest income n: " << i + 1 << endl;
-        if (C[i][0] == lowestIncome) cout << "The merchant with the lowest income n: " << i + 1 << endl;
-    }
-
-    double biggestFees = max(C[0][1], C[1][1], C[2][1]);
-    double lowestFees = min(C[0][1], C[1][1], C[2][01]);
+    double biggestIncome = std::max(std::max(C[0][0], C[1][0]), C[2][0]);
+    double lowestIncome = std::min(std::min(C[0][0], C[1][0]), C[2][0]);
 
     for (int i = 0; i < 3; i++)
     {
-        if (C[i][1] == biggestFees) cout << "The merchant with the biggest comission fees n: " << i + 1 << endl;
-        if (C[i][1] == lowestFees) cout << "The merchant with the lowest comission fees n: " << i + 1 << endl;
+        if (C[i][0] == biggestIncome) std::cout << "The merchant with the biggest income n: " << i + 1 << std::endl;
+        if (C[i][0] == lowestIncome) std::cout << "The merchant with the lowest income n: " << i + 1 << std::endl;
     }
 
-    cout << "Total income: " << C[0][0] + C[1][0] + C[2][0] << endl;
-    cout << "Total commision fees: " << C[0][1] + C[1][1] + C[2][1] << endl;
-    cout << "Total: " << C[0][0] + C[1][0] + C[2][0] + (C[0][1] + C[1][1] + C[2][1]) << endl;
+    double biggestFees = std::max(std::max(C[0][1], C[1][1]), C[2][1]);
+    double lowestFees = std::min(std::min(C[0][1], C[1][1]), C[2][01]);
+
+    for (int i = 0; i < 3; i++)
+    {
+        if (C[i][1] == biggestFees) std::cout << "The merchant with the biggest comission fees n: " << i + 1 << std::endl;
+        if (C[i][1] == lowestFees) std::cout << "The merchant with the lowest comission fees n: " << i + 1 << std::endl;
+    }
+
+    std::cout << "Total income: " << C[0][0] + C[1][0] + C[2][0] << std::endl;
+    std::cout << "Total commision fees: " << C[0][1] + C[1][1] + C[2][1] << std::endl;
+    std::cout << "Total: " << C[0][0] + C[1][0] + C[2][0] + (C[0][1] + C[1][1] + C[2][1]) << std::endl;
 }
 
-double convertToDecimal(string number, short base)
+double convertToDecimal(std::string number, short base)
 {
-    map<char, int> values{
+    std::map<char, int> values{
         {'0', 0}, {'1', 1}, {'2', 2}, {'3', 3}, {'4', 4}, {'5', 5},
         {'6', 6}, {'7', 7}, {'8', 8}, {'9', 9}, {'A', 10}, {'B', 11},
         {'C', 12}, {'D', 13}, {'E', 14}, {'F', 15}
@@ -361,12 +359,12 @@ double convertToDecimal(string number, short base)
 
     size_t dotPosition = number.find('.');
 
-    for (int i = 0; i < (dotPosition == string::npos ? number.size() : dotPosition); i++)
+    for (int i = 0; i < (dotPosition == std::string::npos ? number.size() : dotPosition); i++)
     {
         result = result * base + values[number[i]];
     }
     
-    if (dotPosition != string::npos)
+    if (dotPosition != std::string::npos)
     {
         for (int i = dotPosition + 1; i < number.size(); i++)
         {
@@ -377,16 +375,12 @@ double convertToDecimal(string number, short base)
     return result + fraction;
 }
 
-string convertFromDecimal(double number, short base)
+std::string convertFromDecimal(double number, short base)
 {
-    map<int, char> values{
-        {0, '0'}, {1, '1'}, {2, '2'}, {3, '3'}, {4, '4'}, {5, '5'},
-        {6, '6'}, {7, '7'}, {8, '8'}, {9, '9'}, {10, 'A'}, {11, 'B'},
-        {12, 'C'}, {13, 'D'}, {14, 'E'}, {15, 'F'}
-    };
+    std::vector<char> values = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
-    string result = "";;
-    long long intPart = static_cast<long long>(number);
+    std::string result;
+    auto intPart = static_cast<long long>(number);
     double fracPart = number - intPart;
 
     if (intPart == 0)
@@ -422,46 +416,46 @@ string convertFromDecimal(double number, short base)
 
 void task9()
 {
-    string num;
+    std::string num;
     short oldBase;
     short newBase;
-    cin >> num >> oldBase >> newBase;
+    std::cin >> num >> oldBase >> newBase;
 
     if ((oldBase > 16 || oldBase < 2) || (newBase > 16 || newBase < 2))
     {
-        cout << "Base must be from 2 to 16";
+        std::cout << "Base must be from 2 to 16";
         return;
     } 
 
     if (num[0] == '0') {
-        cout << "Wrong number";
+        std::cout << "Wrong number";
         return;
     }
 
     if (num == "0") {
-        cout << "0";
+        std::cout << "0";
         return;
     }
 
     int countOfDots = 0;
-    string chars = "0123456789ABCDEF";
+    std::string chars = "0123456789ABCDEF";
     for (auto c : num)
     {
-        if (chars.find(c) == string::npos && c != '.')
+        if (chars.find(c) == std::string::npos && c != '.')
         {
-            cout << "Wrong character found";
+            std::cout << "Wrong character found";
             return;
         }
 
         if (isdigit(c)) {
             if (c - '0' >= oldBase) {
-                cout << "Wrong character found";
+                std::cout << "Wrong character found";
                 return;
             }
         }
         else if (isalpha(c)) {
             if (toupper(c) - 'A' + 10 >= oldBase) {
-                cout << "Wrong character found";
+                std::cout << "Wrong character found";
                 return;
             }
         }
@@ -474,7 +468,7 @@ void task9()
 
     if (countOfDots > 1)
     {
-        cout << "Wrong number";
+        std::cout << "Wrong number";
         return;
     }
 
@@ -483,21 +477,21 @@ void task9()
 
     if (newBase == 10)
     {
-        cout << decNumber;
+        std::cout << decNumber;
         return;
     }
     else
     {
-        string newBaseNumber = convertFromDecimal(decNumber, newBase);
-        cout << newBaseNumber;
+        std::string newBaseNumber = convertFromDecimal(decNumber, newBase);
+        std::cout << newBaseNumber;
     }
 }
 
 int main()
 {
-    cout << "Enter number of task: ";
+    std::cout << "Enter number of task: ";
     short taskNumber;
-    cin >> taskNumber;
+    std::cin >> taskNumber;
 
     switch (taskNumber)
     {
