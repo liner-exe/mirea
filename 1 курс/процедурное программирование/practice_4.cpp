@@ -7,8 +7,6 @@
 #include <regex>
 #include <Windows.h>
 
-#define PI 3.14
-
 void task1()
 {
     std::cout << "Enter 10 numbers to find sum: " << std::endl;
@@ -84,7 +82,7 @@ void circle()
     std::cin >> R;
     if (R <= 0) { std::cout << "Circle does not exist"; return; }
 
-    std::cout << PI * pow(R, 2);
+    std::cout << M_PI * pow(R, 2);
 }
 
 void task3()
