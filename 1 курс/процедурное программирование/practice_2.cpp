@@ -2,67 +2,63 @@
 #include <string>
 #include <cmath>
 
-#define PI 3.14
-
-using namespace std;
-
 void task1()
 {
 	int R, r, h;
 
-	cout << "Enter radius (R): ";
-	cin >> R;
+	std::cout << "Enter radius (R): ";
+	std::cin >> R;
 
-	cout << "Enter radius (r): ";
-	cin >> r;
+	std::cout << "Enter radius (r): ";
+	std::cin >> r;
 
-	cout << "Enter height (h): ";
-	cin >> h;
+	std::cout << "Enter height (h): ";
+	std::cin >> h;
 
 	if (R == 0 || r == 0 || h == 0 || R <= r)
 	{
-		cout << "Truncated cone does not exist.";
+		std::cout << "Truncated cone does not exist.";
 		return;
 	}
 
-	double volume = (1.0 / 3.0) * h * PI * (pow(R, 2) + R * r + pow(r, 2));
+	double volume = (1.0 / 3.0) * h * M_PI * (pow(R, 2) + R * r + pow(r, 2));
 	double l = sqrt(pow(h, 2) + pow(R - r, 2));
-	double surfaceArea = PI * (pow(R, 2) + pow(r, 2)) + PI * (R + r) * l;
+	double surfaceArea = M_PI * (pow(R, 2) + pow(r, 2)) + M_PI * (R + r) * l;
 
-	cout << "Volume of the truncated cone: " << volume << endl;
-	cout << "Total surface area of the truncated cone: " << surfaceArea << endl;
+	std::cout << "Volume of the truncated cone: " << volume << std::endl;
+	std::cout << "Total surface area of the truncated cone: " << surfaceArea << std::endl;
 }
 
 void task2()
 {
 	int x, a;
 
-	cout << "Enter x: ";
-	cin >> x;
+	std::cout << "Enter x: ";
+	std::cin >> x;
 
-	cout << "Enter a: ";
-	cin >> a;
+	std::cout << "Enter a: ";
+	std::cin >> a;
 
 	if (abs(x) < 1)
 	{
 		if (x > 0)
 		{
-			cout << "The solution is: " << a * log(abs(x));
+			std::cout << "The solution is: " << a * log(abs(x));
 		}
 		else
 		{
-			cout << "No solutions.";
+			std::cout << "No solutions.";
 		}
 	}
 	else if (abs(x) >= 1)
 	{
 		if ((a - x * x) >= 0)
 		{
-			cout << "The solution is: " << sqrt(a - x * x);
+			std::cout << "The solution is: " << sqrt(a - x * x);
 		}
 		else
 		{
-			cout << "No solutions.";
+			std::cout << "No solutions.";
 		}
 	}
 }
@@ -71,36 +67,36 @@ void task3()
 {
 	int x, y, b;
 
-	cout << "Enter x: ";
-	cin >> x;
+	std::cout << "Enter x: ";
+	std::cin >> x;
 
-	cout << "Enter y: ";
-	cin >> y;
+	std::cout << "Enter y: ";
+	std::cin >> y;
 
-	cout << "Enter b: ";
-	cin >> b;
+	std::cout << "Enter b: ";
+	std::cin >> b;
 
 	if ((b - y) > 0 && (b - x) >= 0)
 	{
-		cout << "The solution is: " << log(b - y) * sqrt(b - x);
+		std::cout << "The solution is: " << log(b - y) * sqrt(b - x);
 	}
 	else
 	{
-		cout << "No solutions";
+		std::cout << "No solutions";
 	}
 }
 
 void task4()
 {
 	unsigned long long N;
-	string s;
+	std::string s;
 
-	cout << "Enter N: ";
-	cin >> s;
+	std::cout << "Enter N: ";
+	std::cin >> s;
 
 	if ((s.find(".") != -1))
 	{
-		cout << "Invalid number";
+		std::cout << "Invalid number";
 		return;
 	}
 	else
@@ -110,45 +106,45 @@ void task4()
 
 	if (N == 0)
 	{
-		cout << "Invalid number.";
+		std::cout << "Invalid number.";
 		return;
 	}
 	else if (0 < N < pow(2, 64) - 1)
 	{
 		for (unsigned long long i = N; i <= N + 9; i++)
 		{
-			cout << i << " ";
+			std::cout << i << " ";
 		}
 	}
 	else
 	{
-		cout << "The number is too big.";
+		std::cout << "The number is too big.";
 	}
 }
 
 void task5()
 {
-	cout << "x  y" << endl;
+	std::cout << "x  y" << std::endl;
 
 	for (double x = -4.0; x <= 4.0; x += 0.5)
 	{
 		if ((x - 1) == 0)
 		{
-			cout << "undefined" << endl;
+			std::cout << "undefined" << std::endl;
 		}
 		else
 		{
-			cout << x << "  " << (x * x - 2 * x + 2) / (x - 1) << endl;
+			std::cout << x << "  " << (x * x - 2 * x + 2) / (x - 1) << std::endl;
 		}
 	}
 }
 
 int main()
 {
-	cout << "Enter number of task: ";
+	std::cout << "Enter number of task: ";
 
 	short task;
-	cin >> task;
+	std::cin >> task;
 
 	switch (task)
 	{
@@ -168,7 +164,7 @@ int main()
 			task5();
 			break;
 		default:
-			cout << "Invalid task";
+			std::cout << "Invalid task";
 	}
 
 	return 0;
