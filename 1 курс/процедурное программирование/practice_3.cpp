@@ -5,39 +5,37 @@
 #include <cctype>
 #include <Windows.h>
 
-using namespace std;
-
 void task1()
 {
 	double S, n, p;
 	double m;
 
-	cout << "Enter S: ";
-	cin >> S;
+	std::cout << "Enter S: ";
+	std::cin >> S;
 
-	cout << "Enter p: ";
-	cin >> p;
+	std::cout << "Enter p: ";
+	std::cin >> p;
 
-	cout << "Enter n: ";
-	cin >> n;
+	std::cout << "Enter n: ";
+	std::cin >> n;
 
 	if ((n > 0 && n <= 30) && (p > 0 && p < 101))
 	{
 		double r = p / 100;
 		m = (S * r * pow((1 + r), n)) / (12 * (pow((1 + r), n) - 1));
 		
-		cout << "m = " << m;
+		std::cout << "m = " << m;
 	}
 	else
 	{
 		if (p == 0)
 		{
 			m = S / (12 * n);
-			cout << "m = " << m;
+			std::cout << "m = " << m;
 		}
 		else
 		{
-			cout << "Error!";
+			std::cout << "Error!";
 		}
 	}
 }
@@ -47,14 +45,14 @@ void task2()
 	double S, m0, n;
 	double r, m;
 
-	cout << "Enter S: ";
-	cin >> S;
+	std::cout << "Enter S: ";
+	std::cin >> S;
 
-	cout << "Enter m0: ";
-	cin >> m0;
+	std::cout << "Enter m0: ";
+	std::cin >> m0;
 
-	cout << "Enter n: ";
-	cin >> n;
+	std::cout << "Enter n: ";
+	std::cin >> n;
 
 	for (double p = 0; p < 101; p += 0.1)
 	{
@@ -63,29 +61,25 @@ void task2()
 
 		if (abs(m - m0) < 0.01)
 		{
-			cout << p;
+			std::cout << p;
 			return;
 		}
-		else
-		{
-			continue;
-		}
-
-		cout << "Error has occurred";
 	}
+
+	std::cout << "Error!";
 }
 
 void task3()
 {
-	cin.ignore();
+	std::cin.ignore();
 
 	char buffer[1000];
-	string input;
+	std::string input;
 	
-	cout << "Enter string: ";
-	getline(cin, input);
+	std::cout << "Enter string: ";
+	getline(std::cin, input);
 
-	ofstream fout("task3_4.txt");
+	std::ofstream fout("task3_4.txt");
 
 	if (fout.is_open())
 	{
@@ -94,10 +88,11 @@ void task3()
 	}
 	else
 	{
-		cout << "Error";
+		std::cout << "Error";
+		return;
 	}
 
-	ifstream fin("task3_4.txt");
+	std::ifstream fin("task3_4.txt");
 
 	if (fout.is_open())
 	{
@@ -106,18 +101,19 @@ void task3()
 	}
 	else
 	{
-		cout << "Error";
+		std::cout << "Error";
+		return;
 	}
 
-	cout << "Result: " << buffer;
+	std::cout << "Result: " << buffer;
 }
 
 void task4()
 {
-	string digits = "0123456789";
+	std::string digits = "0123456789";
 	char buffer[1000];
 
-	ifstream fin("task3_4.txt");
+	std::ifstream fin("task3_4.txt");
 
 	if (fin.is_open())
 	{
@@ -126,11 +122,11 @@ void task4()
 	}
 	else
 	{
-		cout << "Error";
+		std::cout << "Error";
 		return;
 	}
 
-	cout << "Filtered string: ";
+	std::cout << "Filtered string: ";
 
 	for (int i = 0; i <= 1000; i++)
 	{
@@ -138,24 +134,22 @@ void task4()
 		{
 			return;
 		}
-		else
+
+		if (digits.find(buffer[i]) != -1)
 		{
-			if (digits.find(buffer[i]) != -1)
-			{
-				cout << buffer[i];
-			}
+			std::cout << buffer[i];
 		}
 	}
 }
 
 void task5()
 {
-	cin.ignore();
+	std::cin.ignore();
 
-	string str;
+	std::string str;
 
-	cout << "Enter string: ";
-	getline(cin, str);
+	std::cout << "Enter string: ";
+	getline(std::cin, str);
 
 	int length = str.length();
 
@@ -172,16 +166,17 @@ void task5()
 		}
 	}
 
-	cout << "Sorted string: " << str;
+	std::cout << "Sorted string: " << str;
 }
 
 int main()
 {
 	system("chcp 1251");
-	cout << "Enter number of task: ";
+
+	std::cout << "Enter number of task: ";
 
 	short task;
-	cin >> task;
+	std::cin >> task;
 
 	switch (task)
 	{
@@ -201,7 +196,7 @@ int main()
 			task5();
 			break;
 		default:
-			cout << "Invalid task";
+			std::cout << "Invalid task";
 	}
 
 	return 0;
