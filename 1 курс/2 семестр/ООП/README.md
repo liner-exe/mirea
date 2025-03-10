@@ -8,6 +8,9 @@
 - [Задание 2_1_2- Доступ к элементам объекта](https://github.com/liner-exe/mirea/blob/master/1%20курс/2%20семестр/ООП/2_1_2.md) :white_check_mark:
 - [Задание 2_1_3 - Простой арифметический калькулятор](https://github.com/liner-exe/mirea/blob/master/1%20курс/2%20семестр/ООП/2_1_3.md) :white_check_mark:
 - [Задание 2_1_4 - Переменная целого типа максимальной длины](https://github.com/liner-exe/mirea/blob/master/1%20курс/2%20семестр/ООП/2_1_4.md) :white_check_mark:
+- 2_2_1
+- 2_3_1
+- 2_4_1
 
 ### Легенда
 - :white_check_mark: - Сдано
