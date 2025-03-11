@@ -6,6 +6,7 @@
         - [ООП](https://github.com/liner-exe/mirea/tree/master/1%20курс/2%20семестр/ООП) :warning:
         - [Искусственный интеллект](https://github.com/liner-exe/mirea/tree/master/1%20курс/2%20семестр/Искусственный%20интеллект) :warning:
         - [СиАОД](https://github.com/liner-exe/mirea/tree/master/1%20курс/2%20семестр/СиАОД) :warning:
+        - Информатика :question:
 
 ### Легенда
 - Пройдено - :white_check_mark:
