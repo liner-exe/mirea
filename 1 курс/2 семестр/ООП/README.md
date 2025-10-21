@@ -1,5 +1,8 @@
 ## Прогресс по задачам
 
+## :warning: Внимание
+Большинство задач из 2, 3, 4 блоков находится [здесь](https://github.com/liner-exe/mirea/tree/master/1%20курс/2%20семестр/ООП/files). Их преобразование в .md формат так и не было завершено и вряд ли будет.
+
 ### Блок 1 (4/4)
 - [Задание 1_1_1](https://github.com/liner-exe/mirea/blob/master/1%20курс/2%20семестр/ООП/1_1_1.md) :white_check_mark:
 - [Задание 1_1_5](https://github.com/liner-exe/mirea/blob/master/1%20курс/2%20семестр/ООП/1_1_5.md) :white_check_mark:
