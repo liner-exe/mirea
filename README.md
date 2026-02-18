@@ -7,6 +7,10 @@
         - [Искусственный интеллект](https://github.com/liner-exe/mirea/tree/master/1%20курс/2%20семестр/Искусственный%20интеллект) :warning:
         - [СиАОД](https://github.com/liner-exe/mirea/tree/master/1%20курс/2%20семестр/СиАОД) :warning:
         - Информатика :question:
+- [2 курс](https://github.com/liner-exe/mirea/tree/master/2%20курс)
+    - [3 семестр](https://github.com/liner-exe/mirea/tree/master/2%20курс/3%20семестр) :white_check_mark:
+        - [СиАОД](https://github.com/liner-exe/mirea/tree/master/2%20курс/3%20семестр/СиАОД) :white_check_mark:
+        - [Конфигурационное управление](https://github.com/liner-exe/mirea/tree/master/2%20курс/3%20семестр/Конфигурационное управление) :white_check_mark:
 
 ### Легенда
 - Пройдено - :white_check_mark:
