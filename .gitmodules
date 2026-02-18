@@ -1,6 +1,6 @@
 [submodule "2 курс/3 семестр/Конфигурационное управление/DDTRon-OS"]
 	path = 2 курс/3 семестр/Конфигурационное управление/DDTRon-OS
-	url = https://github.com/liner-exe/DDTron-OS
+	url = https://github.com/liner-exe/DDTron-OS.git
 [submodule "2 курс/3 семестр/Конфигурационное управление/DDTRon-PackageManager"]
 	path = 2 курс/3 семестр/Конфигурационное управление/DDTRon-PackageManager
 	url = https://github.com/liner-exe/DDTron-PackageManager
